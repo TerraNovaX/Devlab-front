@@ -1,8 +1,10 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Formation from "./pages/Formation";
+import Formations from "./pages/Formations.jsx";
 import DropOffDevice from "./pages/DropOffDevice";
+import Contact from "./pages/Contact.jsx";
+import Concept from "./pages/concept.jsx";
 
 function App() {
   return (
@@ -10,8 +12,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Formation" element={<Formation />} />
-          <Route path="/DropOffYourDevice" element={<DropOffDevice />} />
+          <Route path="/Formations" element={<Formations />} />
+          <Route path="/DropOffDevice" element={<DropOffDevice />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Concept" element={<Concept />} />
+
         </Routes>
       </Router>
     </>

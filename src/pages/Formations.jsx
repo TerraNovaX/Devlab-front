@@ -1,7 +1,7 @@
 import React from "react";
 
-const Formation = () => {
+const Formations = () => {
   return <div>Formation</div>;
 };
 
-export default Formation;
+export default Formations;
