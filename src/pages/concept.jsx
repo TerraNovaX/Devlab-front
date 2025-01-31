@@ -1,7 +1,11 @@
 import React from "react";
+import NavigationMenu from "../components/NavigationMenu.jsx";
 
-const DropOffDevice = () => {
-    return <div>Concept</div>;
+const Concept = () => {
+    return <div>
+        <NavigationMenu />
+        Concept
+    </div>;
 };
 
-export default DropOffDevice;
+export default Concept;
