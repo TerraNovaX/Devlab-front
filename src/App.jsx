@@ -5,11 +5,14 @@ import Formations from "./pages/Formations.jsx";
 import DropOffDevice from "./pages/DropOffDevice";
 import Contact from "./pages/Contact.jsx";
 import Concept from "./pages/concept.jsx";
+import NavigationMenu from "./components/NavigationMenu.jsx";
 
 function App() {
   return (
+
     <>
       <Router>
+        <NavigationMenu/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Formations" element={<Formations />} />
@@ -20,6 +23,7 @@ function App() {
         </Routes>
       </Router>
     </>
+
   );
 }
 
