@@ -19,7 +19,7 @@ function FormInput({ label, type, placeholder, hasIcon }) {
                                 <textarea
                                     id={inputId}
                                     placeholder={placeholder}
-                                    className="flex-1 bg-transparent border-none resize-none h-32"
+                                    className="flex-1 bg-transparent border-none resize-none h-32 focus:outline-none"
                                     aria-label={label}
                                 />
                             ) : (
@@ -27,7 +27,7 @@ function FormInput({ label, type, placeholder, hasIcon }) {
                                     id={inputId}
                                     type={type}
                                     placeholder={placeholder}
-                                    className="flex-1 bg-transparent border-none"
+                                    className="flex-1 bg-transparent border-none focus:outline-none"
                                     aria-label={label}
                                 />
                             )}
