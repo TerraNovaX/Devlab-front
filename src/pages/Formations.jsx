@@ -5,14 +5,14 @@ import Header from "../components/Header";
 const Formations = () => {
   
   const [headerData, setHeaderData] = useState({
-        backgroundImage: '/src/assets/formation_img.png',
+        backgroundImage: '',
         title: '',
         breadcrumb: []
     });
 
     useEffect(() => {
-        // Fetch or set the data specific to the Formation page
-        setHeaderData({
+          // ici entrer les données spécifiques à la page 
+          setHeaderData({
             backgroundImage: '/src/assets/formation_img.png',
             title: 'Formation',
             breadcrumb: [
@@ -24,12 +24,13 @@ const Formations = () => {
 
   return (
     <div>
-      {/*<MapFormation/>*/}
+      
       <Header 
           backgroundImage={headerData.backgroundImage} 
           title={headerData.title} 
           breadcrumb={headerData.breadcrumb} 
       />
+      {/*<MapFormation/>*/}
       {/* Rest of the Formation page content */}
     </div>
   );

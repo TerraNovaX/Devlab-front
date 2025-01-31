@@ -5,13 +5,13 @@ import React, { useState, useEffect } from "react";
 const DropOffDevice = () => {
 
   const [headerData, setHeaderData] = useState({
-          backgroundImage: '/src/assets/formation_img.png',
+          backgroundImage: '',
           title: '',
           breadcrumb: []
       });
   
       useEffect(() => {
-          // Fetch or set the data specific to the Formation page
+          // ici entrer les données spécifiques à la page 
           setHeaderData({
               backgroundImage: '/src/assets/formation_img.png',
               title: 'Déposer',
