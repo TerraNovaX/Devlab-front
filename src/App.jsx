@@ -6,6 +6,7 @@ import DropOffDevice from "./pages/DropOffDevice";
 import Contact from "./pages/Contact.jsx";
 import Concept from "./pages/concept.jsx";
 import NavigationMenu from "./components/NavigationMenu.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/DropOffDevice" element={<DropOffDevice />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Concept" element={<Concept />} />
+          <Route path="/Login" element={<LoginPage />} />
 
         </Routes>
       </Router>

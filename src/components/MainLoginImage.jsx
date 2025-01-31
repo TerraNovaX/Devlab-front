@@ -13,4 +13,4 @@ function MainLoginImage() {
   );
 }
 
-export default MainImage;
+export default MainLoginImage;
