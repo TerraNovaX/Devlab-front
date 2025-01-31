@@ -1,7 +1,7 @@
 import React from "react";
 
-const DropOffDevice = () => {
+const Concept = () => {
     return <div>Concept</div>;
 };
 
-export default DropOffDevice;
+export default Concept;

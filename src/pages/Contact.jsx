@@ -1,10 +1,10 @@
 import React from "react";
 import ContactForm from "../components/ContactForm.jsx";
 
-const DropOffDevice = () => {
+const Contact = () => {
     return <div>
         <ContactForm/>
     </div>;
 };
 
-export default DropOffDevice;
+export default Contact;
