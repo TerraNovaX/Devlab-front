@@ -8,7 +8,7 @@ import Concept from "./pages/concept.jsx";
 
 function App() {
   return (
-    <>
+    <> 
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
