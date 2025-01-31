@@ -20,6 +20,6 @@ export default [
     },
   },
   pluginJs.configs.recommended, // JavaScript rules
-  pluginReact.configs.flat.recommended, // React rules
+  pluginReact.configs.flat?.recommended, // React rules
   configPrettier, // Disables conflicting ESLint rules with Prettier
 ];
