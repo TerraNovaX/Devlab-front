@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        fjalla: ['Fjalla One', 'sans-serif'],
+        sans: ['Roboto', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

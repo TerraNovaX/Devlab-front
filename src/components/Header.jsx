@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = ({ backgroundImage, title, breadcrumb }) => {
     return (
-        <header className="header" style={{ backgroundImage: `url(${backgroundImage})`, height: '20vh' }}>
-            <div className="absolute">
+        <header className="header relative" style={{ backgroundImage: `url(${backgroundImage})`, height: '40vh', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>
+            <div className="absolute bottom-0 left-32 p-4">
                 <nav className="breadcrumb text-white text-sm">
                     <ol className="list-reset flex">
                         {breadcrumb.map((item, index) => (
@@ -14,7 +14,7 @@ const Header = ({ backgroundImage, title, breadcrumb }) => {
                         ))}
                     </ol>
                 </nav>
-                <h1 className="text-white">{title}</h1>
+                <h1 className="text-white text-6xl mb-16 font-fjalla mt-3">{title}</h1>
             </div>
         </header>
     );
