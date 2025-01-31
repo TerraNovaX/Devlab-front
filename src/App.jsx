@@ -1,11 +1,20 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Formation from "./pages/Formation";
+import DropOffDevice from "./pages/DropOffDevice";
+
 function App() {
   return (
-    <div className="mx-auto max-w-lg border p-4 bg-skyBlue text-yellow">
-      <p>Bonjour</p>
-      <Box></Box>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Formation" element={<Formation />} />
+          <Route path="/DropOffYourDevice" element={<DropOffDevice />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
