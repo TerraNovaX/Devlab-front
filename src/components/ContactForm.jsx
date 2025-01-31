@@ -13,7 +13,6 @@ function ContactForm() {
 
     return (
         <div className="flex overflow-hidden flex-col items-center pb-60 bg-white max-md:pb-24">
-            <NavigationMenu />
             <div className="mt-28 max-w-full w-[914px] max-md:mt-10">
                 <div className="flex gap-5 max-md:flex-col">
                     <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
