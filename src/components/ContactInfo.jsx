@@ -1,11 +1,10 @@
 import * as React from "react";
-import emailIcon from "../assets/icons/email.png";
 
 function ContactInfo() {
     const contactDetails = [
         { icon: "https://cdn-icons-png.flaticon.com/512/64/64113.png", text: "NYC, United States" },
         { icon: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-icons/phone-call-kq9z3lfm4welx5rbsdfd.png/phone-call-ygdahfdcompo15s9uregk.png?_a=DAJFJtWIZAAC", text: "000111222333" },
-        { icon: emailIcon, text: "somebody@gmail.com" }
+        { icon: "https://cdn-icons-png.flaticon.com/512/64/64113.png", text: "somebody@gmail.com" }
     ];
 
     return (
