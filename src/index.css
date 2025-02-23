@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fjalla-one {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal; /* optionnel, pour garder un poids normal */
+  }

@@ -17,12 +17,12 @@ const Header: React.FC<HeaderProps> = ({ backgroundImage, title, breadcrumb }) =
       className="header relative"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        height: "40vh",
+        height: "30vh",
         borderBottomLeftRadius: "20px",
         borderBottomRightRadius: "20px",
       }}
     >
-      <div className="absolute bottom-0 left-32 p-4">
+      <div className="absolute bottom-0 left-64 p-3">
         <nav className="breadcrumb text-white text-sm">
           <ol className="list-reset flex">
             {breadcrumb.map((item, index) => (
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ backgroundImage, title, breadcrumb }) =
             ))}
           </ol>
         </nav>
-        <h1 className="text-white text-6xl mb-16 font-fjalla mt-3">{title}</h1>
+        <h1 className="text-white text-6xl mb-16 font-fjalla mt-3 fjalla-one">{title}</h1>
       </div>
     </header>
   );
