@@ -1,5 +1,9 @@
+import MapDepots from "../components/MapDepots";
+
 const DropOffDevice = () => {
-  return <div>DropOffDevice</div>;
+  return <div>DropOffDevice
+    <MapDepots/>
+  </div>;
 };
 
 export default DropOffDevice;
