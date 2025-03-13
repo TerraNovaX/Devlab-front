@@ -1,38 +1,6 @@
 import React, { useState } from "react";
 
-const LoginPage: React.FC = () => {
-    // États pour l'email et le mot de passe
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [error, setError] = useState<string>("");
-
-    // Fonction de soumission du formulaire
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault();
-        
-        // On envoie la requête à l'API
-        try {
-            const response = await fetch("http://127.0.0.1:8000/api/users/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            if (!response.ok) {
-                throw new Error("Invalid credentials");
-            }
-
-            // Si la connexion est réussie, on redirige l'utilisateur ou on gère la session
-            const data = await response.json();
-            console.log("User logged in", data);
-            // Vous pouvez stocker un token ici ou rediriger l'utilisateur
-        } catch (err) {
-            setError("Invalid email or password.");
-        }
-    };
-
+const SignUpPage = () => {
     return (
         <div className="flex max-md:flex-col h-screen overflow-hidden">
             {/* Partie image */}
@@ -47,10 +15,10 @@ const LoginPage: React.FC = () => {
 
             {/* Formulaire de login */}
             <div className="flex flex-col justify-center px-12 py-8 w-[50%] bg-white max-md:w-full max-md:h-1/2 h-full max-w-md mx-auto">
-                <div className="text-xl text-zinc-900 mb-8">Connectez-vous</div>
+                <div className="text-xl text-zinc-900 mb-8">Créer un compte</div>
 
                 {/* Formulaire de connexion */}
-                <form className="flex flex-col w-full" onSubmit={handleSubmit}>
+                <form className="flex flex-col w-full">
                     {/* Email ou numéro de téléphone */}
                     <div className="flex flex-col mb-4 w-full">
                         <label htmlFor="emailInput" className="text-xs text-zinc-800">Email</label>
@@ -58,8 +26,6 @@ const LoginPage: React.FC = () => {
                             type="text"
                             id="emailInput"
                             placeholder="Email ou Téléphone"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
                             className="mt-2 p-2 rounded-md border border-neutral-200"
                         />
                     </div>
@@ -71,21 +37,18 @@ const LoginPage: React.FC = () => {
                             type="password"
                             id="passwordInput"
                             placeholder="Entrer votre mot de passe"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
                             className="mt-2 p-2 rounded-md border border-neutral-200"
                         />
                     </div>
 
-                    {/* Affichage des erreurs */}
-                    {error && <div className="text-red-500 text-xs mb-4">{error}</div>}
+                    
 
                     {/* Bouton de soumission */}
                     <button
                         type="submit"
                         className="px-6 py-2.5 bg-blue-600 text-white rounded-md text-base font-bold"
                     >
-                        Se connecter
+                        Créer un compte
                     </button>
 
                     {/* Séparateur */}
@@ -99,13 +62,13 @@ const LoginPage: React.FC = () => {
                             alt="Google logo"
                             className="w-5 mr-2"
                         />
-                        <span>Se connecter avec Google</span>
+                        <span>S'enregistrer avec google</span>
                     </button>
 
                     {/* Lien pour s'inscrire */}
                     <div className="flex gap-2 items-start self-center mt-6 text-xs">
                         <span className="text-zinc-900">Vous avez déja un compte?</span>
-                        <a href="/SignUpPage" className="text-blue-600">S'enregistrer ici</a>
+                        <a href="/LoginPage" className="text-blue-600">Connectez-vous ici</a>
                     </div>
                 </form>
             </div>
@@ -113,4 +76,4 @@ const LoginPage: React.FC = () => {
     );
 };
 
-export default LoginPage;
+export default SignUpPage;

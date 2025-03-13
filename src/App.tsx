@@ -6,6 +6,7 @@ import Contact from "./pages/Contact.jsx";
 import Concept from "./pages/concept.jsx";
 import NavigationMenu from "./components/NavigationMenu.jsx";
 import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Concept" element={<Concept />} />
           <Route path="/LoginPage" element={<LoginPage />} />
-
+          <Route path="/SignUpPage" element={<SignUpPage />} />
         </Routes>
       </Router>
     </>
