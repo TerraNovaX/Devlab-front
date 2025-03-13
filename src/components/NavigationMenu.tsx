@@ -12,7 +12,7 @@ function NavigationMenu() {
   const navigate = useNavigate();
 
   const handleAccountClick = () => {
-    navigate("/mon-compte");
+    navigate("/LoginPage");
   };
 
   return (

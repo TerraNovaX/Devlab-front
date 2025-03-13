@@ -1,6 +1,38 @@
-import * as React from "react";
+import React, { useState } from "react";
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
+    // États pour l'email et le mot de passe
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [error, setError] = useState<string>("");
+
+    // Fonction de soumission du formulaire
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+        
+        // On envoie la requête à l'API
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/users/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Invalid credentials");
+            }
+
+            // Si la connexion est réussie, on redirige l'utilisateur ou on gère la session
+            const data = await response.json();
+            console.log("User logged in", data);
+            // Vous pouvez stocker un token ici ou rediriger l'utilisateur
+        } catch (err) {
+            setError("Invalid email or password.");
+        }
+    };
+
     return (
         <div className="flex max-md:flex-col h-screen overflow-hidden">
             {/* Partie image */}
@@ -18,7 +50,7 @@ const LoginPage = () => {
                 <div className="text-xl text-zinc-900 mb-8">Connectez-vous</div>
 
                 {/* Formulaire de connexion */}
-                <form className="flex flex-col w-full">
+                <form className="flex flex-col w-full" onSubmit={handleSubmit}>
                     {/* Email ou numéro de téléphone */}
                     <div className="flex flex-col mb-4 w-full">
                         <label htmlFor="emailInput" className="text-xs text-zinc-800">Login</label>
@@ -26,6 +58,8 @@ const LoginPage = () => {
                             type="text"
                             id="emailInput"
                             placeholder="Email or phone number"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="mt-2 p-2 rounded-md border border-neutral-200"
                         />
                     </div>
@@ -37,18 +71,14 @@ const LoginPage = () => {
                             type="password"
                             id="passwordInput"
                             placeholder="Enter password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             className="mt-2 p-2 rounded-md border border-neutral-200"
                         />
                     </div>
 
-                    {/* Rappel mot de passe */}
-                    <div className="flex justify-between text-xs text-zinc-900 mb-4">
-                        <div className="flex items-center">
-                            <input type="checkbox" id="rememberMe" className="mr-2" />
-                            <label htmlFor="rememberMe">Remember me</label>
-                        </div>
-                        <a href="/forgot-password" className="text-blue-600">Forgot password?</a>
-                    </div>
+                    {/* Affichage des erreurs */}
+                    {error && <div className="text-red-500 text-xs mb-4">{error}</div>}
 
                     {/* Bouton de soumission */}
                     <button
