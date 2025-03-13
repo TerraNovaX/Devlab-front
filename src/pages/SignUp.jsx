@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const LoginPage = () => {
+const SignUpPage = () => {
     return (
         <div className="flex max-md:flex-col h-screen overflow-hidden">
             {/* Partie image */}
@@ -15,7 +15,7 @@ const LoginPage = () => {
 
             {/* Formulaire de login */}
             <div className="flex flex-col justify-center px-12 py-8 w-[50%] bg-white max-md:w-full max-md:h-1/2 h-full max-w-md mx-auto">
-                <div className="text-xl text-zinc-900 mb-8">Connectez-vous</div>
+                <div className="text-xl text-zinc-900 mb-8">Créer un compte</div>
 
                 {/* Formulaire de connexion */}
                 <form className="flex flex-col w-full">
@@ -47,7 +47,6 @@ const LoginPage = () => {
                             <input type="checkbox" id="rememberMe" className="mr-2" />
                             <label htmlFor="rememberMe">Rester connecté</label>
                         </div>
-                        <a href="/forgot-password" className="text-blue-600">Mot de passe oublié?</a>
                     </div>
 
                     {/* Bouton de soumission */}
@@ -55,7 +54,7 @@ const LoginPage = () => {
                         type="submit"
                         className="px-6 py-2.5 bg-blue-600 text-white rounded-md text-base font-bold"
                     >
-                        Se connecter
+                        Créer un compte
                     </button>
 
                     {/* Séparateur */}
@@ -69,13 +68,13 @@ const LoginPage = () => {
                             alt="Google logo"
                             className="w-5 mr-2"
                         />
-                        <span>Se connecter avec Google</span>
+                        <span>s'enregistrer avec google</span>
                     </button>
 
                     {/* Lien pour s'inscrire */}
                     <div className="flex gap-2 items-start self-center mt-6 text-xs">
                         <span className="text-zinc-900">Vous avez déja un compte?</span>
-                        <a href="/signup" className="text-blue-600">Créer un compte ici</a>
+                        <a href="/login" className="text-blue-600">Connectez-vous ici</a>
                     </div>
                 </form>
             </div>
@@ -83,4 +82,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default SignUpPage;
